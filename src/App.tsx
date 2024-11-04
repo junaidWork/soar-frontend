@@ -1,5 +1,7 @@
+import MainLayout from './layout/MainLayout';
+
 const App = () => {
-  return <div className="text-red-800">Hello World</div>;
+  return <MainLayout>Hello World</MainLayout>;
 };
 
 export default App;
