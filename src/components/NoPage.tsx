@@ -14,7 +14,7 @@ const NoPage = () => {
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <Link
             to="/"
-            className="w-full flex justify-center items-center md:w-[190px] h-[50px] font-semibold px-6 py-2 bg-[#232323] text-white rounded-2xl hover:opacity-90 transition-opacity">
+            className="w-full flex justify-center items-center md:w-[190px] h-[50px] font-semibold px-6 py-2 bg-[#232323] text-white rounded-2xl hover:opacity-80 transition-opacity">
             Home
           </Link>
 
