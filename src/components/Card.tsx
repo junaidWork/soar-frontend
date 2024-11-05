@@ -1,8 +1,7 @@
-import React from 'react';
-import LightChipIcon from '../assets/icons/white_Chip_Card.svg';
-import DarkChipIcon from '../assets/icons/dark_Chip_Card.svg';
-import LightTwoCircles from '../assets/icons/light_circle.svg';
-import DarkTwoCircles from '../assets/icons/dark_circle.svg';
+import { ReactComponent as DarkChipIcon } from '../assets/icons/dark_Chip_Card.svg';
+import { ReactComponent as LightTwoCircles } from '../assets/icons/light_circle.svg';
+import { ReactComponent as DarkTwoCircles } from '../assets/icons/dark_circle.svg';
+import { ReactComponent as LightChipIcon } from '../assets/icons/white_Chip_Card.svg';
 
 interface CardProps {
   name: string;
@@ -24,9 +23,7 @@ export default function Card({ name, number, expiry, balance, dark = false }: Ca
               ${balance}
             </p>
           </div>
-          <div>
-            <img src={dark ? LightChipIcon : DarkChipIcon} alt="chip icon" className="w-10 h-10" />
-          </div>
+          <div>{dark ? <LightChipIcon /> : <DarkChipIcon />}</div>
         </div>
 
         <div className="flex justify-between w-10/12">
@@ -45,7 +42,7 @@ export default function Card({ name, number, expiry, balance, dark = false }: Ca
         <p className={`text-2xl tracking-wider ${dark ? 'text-white' : 'text-gray-800'}`}>
           {number}
         </p>
-        <img src={dark ? LightTwoCircles : DarkTwoCircles} alt="" />
+        {dark ? <LightTwoCircles /> : <DarkTwoCircles />}
       </div>
     </div>
   );
