@@ -1,9 +1,9 @@
 import React from 'react';
-import Dashboard from './components/dashboard/Dashboard';
-import NoPage from './components/NoPage';
-import Settings from './components/settings/Settings';
-import MainLayout from './layout/MainLayout';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
+import NoPage from './components/NoPage';
+import Settings from './pages/Settings';
+import MainLayout from './layout/MainLayout';
 
 const App = () => {
   return (

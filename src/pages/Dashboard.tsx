@@ -1,7 +1,7 @@
-import Card from '../Card';
-import TransactionList from '../TransactionList';
-import { BalanceHistory, ExpenseStats, WeeklyActivity } from '../Charts';
-import QuickTransfer from '../QuickTransfer';
+import Card from '../components/Card';
+import TransactionList from '../components/TransactionList';
+import { BalanceHistory, ExpenseStats, WeeklyActivity } from '../components/Charts';
+import QuickTransfer from '../components/QuickTransfer';
 
 const Dashboard = () => {
   return (

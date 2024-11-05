@@ -1,9 +1,10 @@
 import { Formik, Form } from 'formik';
-import { Button } from '../../elements/Button';
-import FormField from '../../elements/FormField';
-import { ProfileSchema } from '../../../utils/schema';
 
-import { ReactComponent as Pencil } from '../../../assets/icons/pencil.svg';
+import { ProfileSchema } from '../../utils/schema';
+import FormField from '../elements/FormField';
+import { Button } from '../elements/Button';
+
+import { ReactComponent as Pencil } from '../../assets/icons/pencil.svg';
 
 const EditProfileForm = () => {
   const uploadImageHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,6 +29,7 @@ const EditProfileForm = () => {
               alt="Profile"
               className="w-24 h-24 rounded-full object-cover"
               id="profile-image"
+              data-testid="profile-image"
             />
             <input
               type="file"

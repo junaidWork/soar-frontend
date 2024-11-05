@@ -5,7 +5,6 @@
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.119",
@@ -26,7 +25,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll --coverage",
     "eject": "react-scripts eject",
     "lint": "eslint --fix .",
     "lint-check": "eslint .",
@@ -54,6 +53,7 @@
   "devDependencies": {
     "@eslint/js": "^9.13.0",
     "@tailwindcss/forms": "^0.5.9",
+    "@testing-library/react": "^16.0.1",
     "eslint": "^8.57.1",
     "eslint-plugin-react": "^7.37.2",
     "globals": "^15.11.0",
