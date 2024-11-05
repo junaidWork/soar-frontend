@@ -1,7 +1,7 @@
 import React, { ReactNode, useState } from 'react';
-import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
-import SmallScreenSidebar from '../components/SmallScreenSidebar';
+import Sidebar from '../components/sidebar/Sidebar';
+import SmallScreenSidebar from '../components/sidebar/SmallScreenSidebar';
 
 const MainLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);

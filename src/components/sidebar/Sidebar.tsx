@@ -1,5 +1,5 @@
-import Document from '../assets/icons/task-fill.svg';
-import { sideBarMenuItems } from '../utils/contants';
+import { sideBarMenuItems } from '../../utils/constants';
+import Document from '../../assets/icons/task-fill.svg';
 
 const Sidebar = () => {
   return (
@@ -15,7 +15,7 @@ const Sidebar = () => {
             className={`flex items-center gap-4 p-3 cursor-pointer mb-2 ${
               item.active
                 ? 'text-black border-l-[6px] border-black'
-                : 'text-secondary hover:bg-gray-50'
+                : 'text-light_gray hover:bg-gray-50'
             }`}>
             <div className="flex items-start justify-start gap-3 w-full ml-12">
               <img src={item.icon} alt={item.text} />

@@ -20,7 +20,7 @@ const Header = ({ setSidebarOpen }: { setSidebarOpen: (open: boolean) => void })
           <input
             type="text"
             placeholder="Search for something"
-            className="pl-10 pr-4 py-2 bg-[#F5F7FA] placeholder:text-[#8BA3CB] h-[50px] rounded-[40px] border-none focus:outline-none"
+            className="pl-10 pr-4 py-2 bg-[#F5F7FA] placeholder:text-secondary h-[50px] rounded-[40px] border-none focus:outline-none"
           />
         </div>
         <div className="flex items-center gap-4">
