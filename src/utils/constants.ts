@@ -1,15 +1,15 @@
-import Home from '../assets/icons/home.svg';
-import Transactions from '../assets/icons/Glyph.svg';
-import User from '../assets/icons/user.svg';
-import Investments from '../assets/icons/investment.svg';
-import CreditCards from '../assets/icons/credit-card.svg';
-import Loans from '../assets/icons/loan.svg';
-import Services from '../assets/icons/service.svg';
-import Setting from '../assets/icons/settings.svg';
-import Privileges from '../assets/icons/privilege.svg';
-import DepositCard from '../assets/icons/deposit-card.svg';
-import DepositPaypal from '../assets/icons/deposit-paypal.svg';
-import Currency from '../assets/icons/currency.svg';
+import { ReactComponent as Home } from '../assets/icons/home.svg';
+import { ReactComponent as Transactions } from '../assets/icons/Glyph.svg';
+import { ReactComponent as User } from '../assets/icons/user.svg';
+import { ReactComponent as Investments } from '../assets/icons/investment.svg';
+import { ReactComponent as CreditCards } from '../assets/icons/credit-card.svg';
+import { ReactComponent as Loans } from '../assets/icons/loan.svg';
+import { ReactComponent as Services } from '../assets/icons/service.svg';
+import { ReactComponent as Setting } from '../assets/icons/settings.svg';
+import { ReactComponent as Privileges } from '../assets/icons/privilege.svg';
+import { ReactComponent as DepositCard } from '../assets/icons/deposit-card.svg';
+import { ReactComponent as DepositPaypal } from '../assets/icons/deposit-paypal.svg';
+import { ReactComponent as Currency } from '../assets/icons/currency.svg';
 
 export const sideBarMenuItems = [
   { icon: Home, text: 'Dashboard', path: '/' },
@@ -44,6 +44,13 @@ export const transactions = [
     date: '21 January 2021',
     amount: 5400,
     icon: Currency
+  },
+  {
+    id: 4,
+    name: 'Jemi Wilson',
+    date: '21 January 2021',
+    amount: 5400,
+    icon: Currency
   }
 ];
 
@@ -53,14 +60,14 @@ export const teamMembers = [
     name: 'Livia Bator',
     role: 'CEO',
     avatar:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80'
+      'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80'
   },
   {
     id: 2,
     name: 'Randy Press',
     role: 'Director',
     avatar:
-      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80'
+      'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80'
   },
   {
     id: 3,
@@ -72,7 +79,7 @@ export const teamMembers = [
   {
     id: 4,
     name: 'Workman4',
-    role: 'Designer',
+    role: 'Frontend',
     avatar:
       'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80'
   }

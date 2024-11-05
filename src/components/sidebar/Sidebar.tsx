@@ -1,12 +1,13 @@
 import { sideBarMenuItems } from '../../utils/constants';
-import Document from '../../assets/icons/task-fill.svg';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
+import { ReactComponent as Document } from '../../assets/icons/task-fill.svg';
 
 const Sidebar = () => {
+  const { pathname } = useLocation();
   return (
     <aside className="hidden md:block w-64 bg-white min-h-screen relative transition-all duration-300 ease-in-out border-r border-gray-200">
       <div className="flex items-center justify-center gap-2 h-[100px]">
-        <img src={Document} alt="Document" />
+        <Document />
         <span className="text-xl font-bold text-gray-800">Soar Task</span>
       </div>
       <nav>
@@ -22,7 +23,7 @@ const Sidebar = () => {
               }`
             }>
             <div className="flex items-start justify-start gap-3 w-full ml-12">
-              <img src={item.icon} alt={item.text} />
+              <item.icon fill={pathname === item.path ? 'black' : '#B1B1B1'} />
               <span className="font-medium">{item.text}</span>
             </div>
           </NavLink>

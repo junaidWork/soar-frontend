@@ -1,10 +1,11 @@
 import { useState } from 'react';
 
-import ArrowNext from '../assets/icons/arrow-next.svg';
-import SendIcon from '../assets/icons/send-icon.svg';
 import { Button } from './elements/Button';
 import Avatar from './elements/Avatar';
 import { teamMembers } from '../utils/constants';
+
+import { ReactComponent as ArrowNext } from '../assets/icons/arrow-next.svg';
+import { ReactComponent as SendIcon } from '../assets/icons/send-icon.svg';
 
 const QuickTransfer = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -42,7 +43,7 @@ const QuickTransfer = () => {
         <button
           onClick={handleNext}
           className="absolute right-2 top-12 transform -translate-y-1/2 flex items-center justify-center w-12 h-12 text-2xl rounded-full p-1 shadow-md hover:bg-gray-50">
-          <img src={ArrowNext} alt="ArrowNext" />
+          <ArrowNext />
         </button>
       </div>
 
@@ -60,7 +61,7 @@ const QuickTransfer = () => {
             className="absolute right-0 w-[125px] font-semibold rounded-full"
             variant={'default'}>
             <span>Send</span>
-            <img src={SendIcon} alt="SendIcon" />
+            <SendIcon />
           </Button>
         </div>
       </div>

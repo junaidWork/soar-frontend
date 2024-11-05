@@ -1,3 +1,4 @@
+import React from 'react';
 import Dashboard from './components/dashboard/Dashboard';
 import NoPage from './components/NoPage';
 import Settings from './components/settings/Settings';
@@ -9,8 +10,22 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="/settings" element={<Settings />} />
+          <Route
+            index
+            element={
+              <React.Suspense fallback={<div>Loading...</div>}>
+                <Dashboard />
+              </React.Suspense>
+            }
+          />
+          <Route
+            path="/settings"
+            element={
+              <React.Suspense fallback={<div>Loading...</div>}>
+                <Settings />
+              </React.Suspense>
+            }
+          />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

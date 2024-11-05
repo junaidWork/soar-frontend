@@ -35,17 +35,19 @@ export function WeeklyActivity() {
         label: 'Withdraw',
         data: [400, 300, 200, 450, 180, 300, 400],
         backgroundColor: '#232323',
-        barThickness: 15,
+        barThickness: 25,
         borderRadius: 30,
-        borderSkipped: false
+        borderSkipped: false,
+        maxBarThickness: 15
       },
       {
         label: 'Deposit',
         data: [200, 150, 300, 250, 220, 280, 300],
         backgroundColor: '#396AFF',
-        barThickness: 15,
+        barThickness: 25,
         borderRadius: 30,
-        borderSkipped: false
+        borderSkipped: false,
+        maxBarThickness: 15
       }
     ]
   };
@@ -65,7 +67,9 @@ export function WeeklyActivity() {
       x: {
         grid: {
           display: false
-        }
+        },
+        categoryPercentage: 0.1,
+        barPercentage: 0.3
       }
     },
 
@@ -96,11 +100,13 @@ export function BalanceHistory() {
       {
         fill: true,
         label: 'Balance',
-        data: [300, 400, 600, 800, 600, 800, 650],
+        data: [100, 700, 200, 500, 100, 600, 350],
         borderColor: '#1814F3',
         backgroundColor: 'rgba(59, 130, 246, 0.1)',
         tension: 0.4,
-        borderWidth: 4
+        borderWidth: 4,
+        pointRadius: 0,
+        pointHoverRadius: 0
       }
     ]
   };
@@ -146,8 +152,8 @@ export function ExpenseStats() {
         data: [15, 35, 20, 30],
         backgroundColor: ['#f97316', ' #1f2937', '#396AFF', '#343C6A'],
         borderWidth: 0,
-        spacing: 5, // Add gap between slices
-        offset: 3 // Slightly offset each slice
+        spacing: 7,
+        offset: 5
       }
     ]
   };
@@ -156,6 +162,15 @@ export function ExpenseStats() {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
+      datalabels: {
+        display: true,
+        align: 'bottom',
+        backgroundColor: '#ccc',
+        borderRadius: 3,
+        font: {
+          size: 18
+        }
+      },
       legend: {
         position: 'right' as const,
         labels: {

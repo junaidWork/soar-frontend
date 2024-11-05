@@ -1,8 +1,9 @@
+import { NavLink, useLocation } from 'react-router-dom';
 import { Dialog, DialogBackdrop, DialogPanel, TransitionChild } from '@headlessui/react';
-import Cross from '../../assets/icons/cross.svg';
-import Document from '../../assets/icons/task-fill.svg';
 import { sideBarMenuItems } from '../../utils/constants';
-import { NavLink } from 'react-router-dom';
+
+import { ReactComponent as Cross } from '../../assets/icons/cross.svg';
+import { ReactComponent as Document } from '../../assets/icons/task-fill.svg';
 
 export default function SmallScreenSidebar({
   sidebarOpen,
@@ -11,6 +12,8 @@ export default function SmallScreenSidebar({
   sidebarOpen: boolean;
   setSidebarOpen: (open: boolean) => void;
 }) {
+  const { pathname } = useLocation();
+
   return (
     <Dialog open={sidebarOpen} onClose={setSidebarOpen} className="relative z-50 lg:hidden">
       <DialogBackdrop
@@ -25,13 +28,13 @@ export default function SmallScreenSidebar({
             <div className="absolute right-0 top-0 flex w-16 justify-center pt-5 duration-300 ease-in-out data-[closed]:opacity-0">
               <button type="button" onClick={() => setSidebarOpen(false)} className="-m-2.5 p-2.5">
                 <span className="sr-only">Close sidebar</span>
-                <img src={Cross} alt="Cross" className="w-8 h-8" />
+                <Cross className="h-8 w-8" />
               </button>
             </div>
           </TransitionChild>
           <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-4">
             <div className="flex items-center justify-start gap-2 h-[75px]">
-              <img src={Document} alt="Document" />
+              <Document />
               <span className="text-xl font-bold text-gray-800">Soar Task</span>
             </div>
             <nav className="flex flex-1 flex-col">
@@ -47,7 +50,8 @@ export default function SmallScreenSidebar({
                     }`
                   }>
                   <div className="flex items-start justify-start gap-3 w-full">
-                    <img src={item.icon} alt={item.text} />
+                    <item.icon fill={pathname === item.path ? 'black' : '#B1B1B1'} />
+
                     <span className="font-medium">{item.text}</span>
                   </div>
                 </NavLink>

@@ -1,9 +1,22 @@
 import { Formik, Form } from 'formik';
-import Pencil from '../../../assets/icons/pencil.svg';
 import { Button } from '../../elements/Button';
 import FormField from '../../elements/FormField';
 import { ProfileSchema } from '../../../utils/schema';
+
+import { ReactComponent as Pencil } from '../../../assets/icons/pencil.svg';
+
 const EditProfileForm = () => {
+  const uploadImageHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    const reader = new FileReader();
+    reader.onload = () => {
+      const image = document.getElementById('profile-image') as HTMLImageElement;
+      image.src = reader.result as string;
+    };
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  };
   return (
     <div className="flex flex-col lg:flex-row justify-between gap-14 mt-8">
       {/* Profile Image and Upload */}
@@ -14,10 +27,15 @@ const EditProfileForm = () => {
               src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80"
               alt="Profile"
               className="w-24 h-24 rounded-full object-cover"
+              id="profile-image"
             />
-            <button className="absolute bottom-0 right-0 rounded-full">
-              <img src={Pencil} alt="Pencil" />
-            </button>
+            <input
+              type="file"
+              accept="image/*"
+              className="absolute bottom-0 right-0 rounded-full opacity-0 z-20 cursor-pointer"
+              onChange={uploadImageHandler}
+            />
+            <Pencil className="absolute bottom-0 right-0 rounded-full" />
           </div>
         </div>
       </div>
