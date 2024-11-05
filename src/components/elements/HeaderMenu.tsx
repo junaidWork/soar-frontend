@@ -1,6 +1,7 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { Link } from 'react-router-dom';
 import Avatar from './Avatar';
+import { userImageUrl } from '../../utils/constants';
 
 const HeaderMenu = () => {
   return (
@@ -9,10 +10,7 @@ const HeaderMenu = () => {
         <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
           <span className="absolute -inset-1.5" />
           <span className="sr-only">Open user menu</span>
-          <Avatar
-            size="lg"
-            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-          />
+          <Avatar size="lg" src={userImageUrl} />
         </MenuButton>
       </div>
       <MenuItems

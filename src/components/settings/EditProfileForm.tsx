@@ -5,6 +5,7 @@ import FormField from '../elements/FormField';
 import { Button } from '../elements/Button';
 
 import { ReactComponent as Pencil } from '../../assets/icons/pencil.svg';
+import { userImageUrl } from '../../utils/constants';
 
 const EditProfileForm = () => {
   const uploadImageHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,7 +26,7 @@ const EditProfileForm = () => {
         <div className="flex justify-center">
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80"
+              src={userImageUrl}
               alt="Profile"
               className="w-24 h-24 rounded-full object-cover"
               id="profile-image"

@@ -42,19 +42,19 @@ const QuickTransfer = () => {
         ))}
         <button
           onClick={handleNext}
-          className="absolute right-2 top-12 transform -translate-y-1/2 flex items-center justify-center w-12 h-12 text-2xl rounded-full p-1 shadow-md hover:bg-gray-50">
+          className="absolute right-2 top-36 sm:top-12 transform -translate-y-1/2 flex items-center justify-center w-12 h-12 text-2xl rounded-full p-1 shadow-md hover:bg-gray-50">
           <ArrowNext />
         </button>
       </div>
 
-      <div className="flex justify-between items-center space-x-2">
+      <div className="flex flex-col xs:flex-row space-y-2 xs:space-y-0 justify-between items-center space-x-2">
         <label className="text-secondary px-2 w-fit">Write Amount</label>
         <div className="relative flex flex-1">
           <input
             type="text"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            className="w-full px-4 py-3 bg-[#EDF1F7] rounded-full text-lg focus:outline-none"
+            className="w-full px-10 xs:px-4 py-3 bg-[#EDF1F7] rounded-full text-lg focus:outline-none"
             placeholder="Enter Amount"
           />
           <Button
