@@ -1,38 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import ArrowNext from '../assets/icons/arrow-next.svg';
 import SendIcon from '../assets/icons/send-icon.svg';
-
-const teamMembers = [
-  {
-    id: 1,
-    name: 'Livia Bator',
-    role: 'CEO',
-    avatar:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80'
-  },
-  {
-    id: 2,
-    name: 'Randy Press',
-    role: 'Director',
-    avatar:
-      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80'
-  },
-  {
-    id: 3,
-    name: 'Workman',
-    role: 'Designer',
-    avatar:
-      'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80'
-  },
-  {
-    id: 4,
-    name: 'Workman',
-    role: 'Designer',
-    avatar:
-      'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80'
-  }
-];
+import { Button } from './elements/Button';
+import Avatar from './elements/Avatar';
+import { teamMembers } from '../utils/constants';
 
 const QuickTransfer = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -59,11 +31,7 @@ const QuickTransfer = () => {
                 : 'opacity-40 transform scale-90'
             }`}>
             <div className="relative">
-              <img
-                src={member.avatar}
-                alt={member.name}
-                className="w-14 h-14 rounded-full object-cover"
-              />
+              <Avatar alt={member.name} size="xl" src={member.avatar} />
             </div>
             <div className="text-center mt-2">
               <h3 className="text-sm font-semibold">{member.name}</h3>
@@ -85,13 +53,15 @@ const QuickTransfer = () => {
             type="text"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            className="w-full px-4 py-3 bg-[#EDF1F7] rounded-full text-lg"
-            placeholder="Write Amount"
+            className="w-full px-4 py-3 bg-[#EDF1F7] rounded-full text-lg focus:outline-none"
+            placeholder="Enter Amount"
           />
-          <button className="absolute right-0 w-[125px] bg-black text-white rounded-full py-3.5 flex items-center justify-center gap-2 hover:bg-gray-800 transition-colors">
+          <Button
+            className="absolute right-0 w-[125px] font-semibold rounded-full"
+            variant={'default'}>
             <span>Send</span>
             <img src={SendIcon} alt="SendIcon" />
-          </button>
+          </Button>
         </div>
       </div>
     </div>

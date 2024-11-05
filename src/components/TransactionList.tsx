@@ -1,33 +1,6 @@
-import React from 'react';
-import DepositCard from '../assets/icons/deposit-card.svg';
-import DepositPaypal from '../assets/icons/deposit-paypal.svg';
-import Currency from '../assets/icons/currency.svg';
+import { transactions } from '../utils/constants';
 
-const transactions = [
-  {
-    id: 1,
-    name: 'Deposit from my Card',
-    date: '28 January 2021',
-    amount: -850,
-    icon: DepositCard
-  },
-  {
-    id: 2,
-    name: 'Deposit Paypal',
-    date: '25 January 2021',
-    amount: 2500,
-    icon: DepositPaypal
-  },
-  {
-    id: 3,
-    name: 'Jemi Wilson',
-    date: '21 January 2021',
-    amount: 5400,
-    icon: Currency
-  }
-];
-
-export default function TransactionList() {
+const TransactionList = () => {
   return (
     <div className="bg-white rounded-3xl shadow-sm p-2.5">
       {transactions.map((transaction) => (
@@ -50,4 +23,6 @@ export default function TransactionList() {
       ))}
     </div>
   );
-}
+};
+
+export default TransactionList;

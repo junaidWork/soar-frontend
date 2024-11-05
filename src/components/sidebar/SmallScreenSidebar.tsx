@@ -2,6 +2,7 @@ import { Dialog, DialogBackdrop, DialogPanel, TransitionChild } from '@headlessu
 import Cross from '../../assets/icons/cross.svg';
 import Document from '../../assets/icons/task-fill.svg';
 import { sideBarMenuItems } from '../../utils/constants';
+import { NavLink } from 'react-router-dom';
 
 export default function SmallScreenSidebar({
   sidebarOpen,
@@ -35,18 +36,21 @@ export default function SmallScreenSidebar({
             </div>
             <nav className="flex flex-1 flex-col">
               {sideBarMenuItems.map((item, index) => (
-                <div
+                <NavLink
+                  to={item.path}
                   key={index}
-                  className={`flex items-center gap-4 p-3 cursor-pointer mb-2 ${
-                    item.active
-                      ? 'text-black border-l-[6px] border-black'
-                      : 'text-light_gray hover:bg-gray-50'
-                  }`}>
+                  className={({ isActive }) =>
+                    `flex items-center gap-4 p-3 cursor-pointer mb-2 ${
+                      isActive
+                        ? 'text-black border-l-[6px] border-black'
+                        : 'text-light_gray hover:bg-gray-50'
+                    }`
+                  }>
                   <div className="flex items-start justify-start gap-3 w-full">
                     <img src={item.icon} alt={item.text} />
                     <span className="font-medium">{item.text}</span>
                   </div>
-                </div>
+                </NavLink>
               ))}
             </nav>
           </div>

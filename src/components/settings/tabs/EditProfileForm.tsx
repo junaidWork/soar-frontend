@@ -1,4 +1,5 @@
 import Pencil from '../../../assets/icons/pencil.svg';
+import { Button } from '../../elements/Button';
 import FormField from '../../elements/FormField';
 const EditProfileForm = () => {
   return (
@@ -41,9 +42,9 @@ const EditProfileForm = () => {
 
         {/* Save Button */}
         <div className="flex justify-end pt-10">
-          <button className="w-full md:w-[190px] h-[50px] font-semibold px-6 py-2 bg-[#232323] text-white rounded-2xl hover:opacity-90 transition-opacity">
+          <Button className="w-full md:w-[190px] font-semibold" variant={'default'}>
             Save
-          </button>
+          </Button>
         </div>
       </div>
     </div>

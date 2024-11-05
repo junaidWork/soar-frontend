@@ -1,4 +1,3 @@
-import React from 'react';
 import Card from '../Card';
 import TransactionList from '../TransactionList';
 import { BalanceHistory, ExpenseStats, WeeklyActivity } from '../Charts';
