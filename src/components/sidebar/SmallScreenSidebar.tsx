@@ -1,7 +1,7 @@
 import { Dialog, DialogBackdrop, DialogPanel, TransitionChild } from '@headlessui/react';
-import Cross from '../assets/icons/cross.svg';
-import Document from '../assets/icons/task-fill.svg';
-import { sideBarMenuItems } from '../utils/contants';
+import Cross from '../../assets/icons/cross.svg';
+import Document from '../../assets/icons/task-fill.svg';
+import { sideBarMenuItems } from '../../utils/constants';
 
 export default function SmallScreenSidebar({
   sidebarOpen,
@@ -40,7 +40,7 @@ export default function SmallScreenSidebar({
                   className={`flex items-center gap-4 p-3 cursor-pointer mb-2 ${
                     item.active
                       ? 'text-black border-l-[6px] border-black'
-                      : 'text-secondary hover:bg-gray-50'
+                      : 'text-light_gray hover:bg-gray-50'
                   }`}>
                   <div className="flex items-start justify-start gap-3 w-full">
                     <img src={item.icon} alt={item.text} />
