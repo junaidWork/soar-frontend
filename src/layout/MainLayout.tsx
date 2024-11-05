@@ -13,7 +13,7 @@ const MainLayout = () => {
       <SmallScreenSidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       <div className="flex-1 flex flex-col">
         <Header setSidebarOpen={setSidebarOpen} />
-        <main className="flex-1 overflow-auto p-10">
+        <main className="flex-1 overflow-auto p-2 xs:p-10">
           <Outlet />
         </main>
       </div>
