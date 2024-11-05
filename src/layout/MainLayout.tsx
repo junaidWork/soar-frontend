@@ -1,9 +1,10 @@
-import React, { ReactNode, useState } from 'react';
+import { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import Header from '../components/Header';
 import Sidebar from '../components/sidebar/Sidebar';
 import SmallScreenSidebar from '../components/sidebar/SmallScreenSidebar';
 
-const MainLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
+const MainLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -12,7 +13,9 @@ const MainLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
       <SmallScreenSidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       <div className="flex-1 flex flex-col">
         <Header setSidebarOpen={setSidebarOpen} />
-        <main className="flex-1 overflow-auto p-10">{children}</main>
+        <main className="flex-1 overflow-auto p-10">
+          <Outlet />
+        </main>
       </div>
     </div>
   );
