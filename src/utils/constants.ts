@@ -71,7 +71,7 @@ export const teamMembers = [
   },
   {
     id: 4,
-    name: 'Workman',
+    name: 'Workman4',
     role: 'Designer',
     avatar:
       'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80'

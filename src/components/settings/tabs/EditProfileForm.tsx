@@ -1,6 +1,8 @@
+import { Formik, Form } from 'formik';
 import Pencil from '../../../assets/icons/pencil.svg';
 import { Button } from '../../elements/Button';
 import FormField from '../../elements/FormField';
+import { ProfileSchema } from '../../../utils/schema';
 const EditProfileForm = () => {
   return (
     <div className="flex flex-col lg:flex-row justify-between gap-14 mt-8">
@@ -20,32 +22,53 @@ const EditProfileForm = () => {
         </div>
       </div>
 
-      {/* Form Grid */}
       <div className="flex-1">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <FormField label="Your Name" value="Charlene Reed" />
-          <FormField label="User Name" value="Charlene Reed" />
-          <FormField label="Email" type="email" value="charlenereed@gmail.com" />
-          <FormField label="Password" type="password" value="**********" />
-          <FormField
-            label="Date of Birth"
-            value="25 January 1990"
-            type="date"
-            defaultValue="1990-01-25"
-          />
-          <FormField label="Present Address" value="San Jose, California, USA" />
-          <FormField label="Permanent Address" value="San Jose, California, USA" />
-          <FormField label="City" value="San Jose" />
-          <FormField label="Postal Code" value="45962" />
-          <FormField label="Country" value="USA" />
-        </div>
-
-        {/* Save Button */}
-        <div className="flex justify-end pt-10">
-          <Button className="w-full md:w-[190px] font-semibold" variant={'default'}>
-            Save
-          </Button>
-        </div>
+        <Formik
+          initialValues={{
+            name: 'Charlene Reed',
+            username: 'Charlene Reed',
+            email: 'charlenereed@gmail.com',
+            password: '12345678',
+            dateOfBirth: '1990-01-25',
+            presentAddress: 'San Jose, California, USA',
+            permanentAddress: 'San Jose, California, USA',
+            city: 'San Jose',
+            postalCode: '45962',
+            country: 'USA'
+          }}
+          validationSchema={ProfileSchema}
+          onSubmit={(values, { setSubmitting }) => {
+            setTimeout(() => {
+              alert(JSON.stringify(values, null, 2));
+              setSubmitting(false);
+            }, 800);
+          }}>
+          {({ isSubmitting }) => (
+            <Form>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <FormField label="Your Name *" name="name" type="text" />
+                <FormField label="User Name *" name="username" type="text" />
+                <FormField label="Email *" name="email" type="email" />
+                <FormField label="Password *" name="password" type="password" />
+                <FormField label="Date of Birth *" name="dateOfBirth" type="date" />
+                <FormField label="Present Address" name="presentAddress" type="text" />
+                <FormField label="Permanent Address" name="permanentAddress" type="text" />
+                <FormField label="City" name="city" type="text" />
+                <FormField label="Postal Code" name="postalCode" type="text" />
+                <FormField label="Country" name="country" type="text" />
+              </div>
+              <div className="flex justify-end pt-10">
+                <Button
+                  className="w-full md:w-[190px] font-semibold"
+                  variant={'default'}
+                  type="submit"
+                  disabled={isSubmitting}>
+                  Save
+                </Button>
+              </div>
+            </Form>
+          )}
+        </Formik>
       </div>
     </div>
   );

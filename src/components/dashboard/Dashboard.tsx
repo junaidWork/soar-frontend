@@ -21,7 +21,7 @@ const Dashboard = () => {
           </div>
           <div>
             <div className="flex justify-start lg:justify-end text-primary font-semibold text-lg mb-4">
-              See All
+              <span className="hover:underline cursor-pointer">See All</span>
             </div>
             <Card name="Eddy Cusuma" number="3778 **** **** 1234" expiry="12/22" balance="5,756" />
           </div>
