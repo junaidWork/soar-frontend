@@ -10,7 +10,7 @@ import { ReactComponent as SendIcon } from '../assets/icons/send-icon.svg';
 const QuickTransfer = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [amount, setAmount] = useState('525.50');
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [, setIsAnimating] = useState(false);
 
   const handleNext = () => {
     setIsAnimating(true);
